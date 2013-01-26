@@ -20,7 +20,7 @@ And then require when needed
 
 ## Usage
 
-This gem is partly for fun, but also because I believe in UIs being fun, having personality, etc. They should be predictable where it matters, but adding some spice here and there is always a good thing. 
+This gem is partly to make [alonetone](http://alonetone.com) more fun. But also because I believe in UIs being fun, having personality, etc. Apps should be predictable where it counts. But come on, adding some spice here and there is always a good thing. 
 
 So, maybe you want to say something sometimes.
 
