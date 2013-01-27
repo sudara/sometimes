@@ -27,7 +27,7 @@ class SometimesTest < Test::Unit::TestCase
         i += 1
       end
     end
-    assert i < 10000
+    assert i < 8000
   end
   
   def test_99

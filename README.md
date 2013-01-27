@@ -31,11 +31,16 @@ Maybe you want to do something several times, but not always the exact same numb
     (4..10).times do
       pick_nose  # between 4 and 10 boogers made, it's unpredictable!
     end
+    
 
 Maybe you want to remind someone of something, but not toooo often (It gets annoying!)
 
     15.percent_of_the_time do
       puts "Howdy, Don't forget to register!"  # be annoying, but only 15% of the time
+    end
+    
+    33.percent_of_the time do
+      be_very_polite  
     end
 
 Or maybe there's a rare task that should pop up once and a while
