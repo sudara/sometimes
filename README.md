@@ -48,4 +48,4 @@ Or maybe there's a rare task that should pop up once and a while
 
 This gem was made so [alonetone](http://github.com/sudara/alonetone) could bit more fun when displaying notices and communicating to our users. 
 
-We are human, and have personality. Shouldn't our applications reflect this? Be predictable where it counts. But lets add some spice here and there — it is always a good thing. 
+We are human, and have personality. Shouldn't our applications reflect this? Be predictable where it counts. But toss in some spice here and there — it is always a good thing. 
