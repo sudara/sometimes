@@ -20,7 +20,7 @@ require "sometimes/version"
 class Fixnum
   def percent_of_the_time(&block)
     raise(ArgumentError, 'Fixnum should be between 1 and 100 to be used with the times method') unless self > 0 && self <= 100
-    yield block if (Kernel.rand(99)+1) <= self
+    yield if (Kernel.rand(99)+1) <= self
   end
 end
 

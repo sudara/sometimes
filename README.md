@@ -6,6 +6,8 @@ A (very) simple collection of lil' helpers polluting namespaces because...why th
 
 ## Installation
 
+Works with only ruby 1.9.2 and up for now because I'm lazy and like the Random class.
+
 Add this line to your Gemfile:
 
     gem 'sometimes'
@@ -43,10 +45,14 @@ Maybe you want to remind someone of something, but not toooo often (It gets anno
       be_very_polite  
     end
 
-Or maybe there's a rare task that should pop up once and a while
+Share a rare moment with your user
 
     rarely do
       puts "How would you like some spammy spam spam!"  # be really annoying about 5% of the time
+    end
+    
+    1.percent_of_the_time do
+      puts "Want to see something really cool?"
     end
 
 ## Why?

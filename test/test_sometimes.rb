@@ -39,4 +39,15 @@ class SometimesTest < Test::Unit::TestCase
     end
     assert i > 97000
   end
+  
+  def test_1
+    i = 0
+    100000.times do
+      1.percent_of_the_time do
+        i += 1
+      end
+    end
+    assert i < 1000   
+  end
+  
 end
