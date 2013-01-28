@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Sometimes : Little hacks n' helpers to make your code more fun and unpredictable." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sometimes</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sudara/sometimes">View on GitHub</a>
+
+          <h1 id="project_title">Sometimes</h1>
+          <h2 id="project_tagline">Little hacks n' helpers to make your code more fun and unpredictable.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/sudara/sometimes/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/sudara/sometimes/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Sometimes</h1>
+
+<p>Stop being so black and white. Mix things up a bit and execute code <em>sometimes</em>.</p>
+
+<p>A (very) simple collection of lil' helpers polluting namespaces because...why the hell not?</p>
+
+<h2>Installation</h2>
+
+<p>Works with only ruby 1.9.2 and up for now because I'm lazy and like the Random class.</p>
+
+<p>Add this line to your Gemfile:</p>
+
+<div class="highlight"><pre><span class="n">gem</span> <span class="s1">'sometimes'</span>
+</pre></div>
+
+<p>And then execute:</p>
+
+<div class="highlight"><pre><span class="gp">$</span> bundle
+</pre></div>
+
+<p>Require when needed</p>
+
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'sometimes'</span>
+</pre></div>
+
+<h2>Usage</h2>
+
+<p>Say something every other time</p>
+
+<div class="highlight"><pre><span class="n">sometimes</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Hey, you are awesome. You really are."</span>  <span class="c1"># executes warm fuzzies 50% of the time</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Maybe you want to do something several times, but not always the exact same number of times</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+  <span class="n">pick_nose</span>  <span class="c1"># between 4 and 10 boogers made, it's unpredictable!</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Maybe you want to remind someone of something, but not toooo often (It gets annoying!)</p>
+
+<div class="highlight"><pre><span class="mi">15</span><span class="o">.</span><span class="n">percent_of_the_time</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Howdy, Don't forget to register!"</span>  <span class="c1"># be annoying, but only 15% of the time</span>
+<span class="k">end</span>
+
+<span class="mi">33</span><span class="o">.</span><span class="n">percent_of_the</span> <span class="n">time</span> <span class="k">do</span>
+  <span class="n">be_very_polite</span>  
+<span class="k">end</span>
+</pre></div>
+
+<p>Share a rare moment with your user</p>
+
+<div class="highlight"><pre><span class="n">rarely</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"How would you like some spammy spam spam!"</span>  <span class="c1"># be really annoying about 5% of the time</span>
+<span class="k">end</span>
+
+<span class="mi">1</span><span class="o">.</span><span class="n">percent_of_the_time</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Want to see something really cool?"</span>
+<span class="k">end</span>
+</pre></div>
+
+<h2>Why?</h2>
+
+<p>This gem was made so <a href="http://github.com/sudara/alonetone">alonetone</a> could bit more fun when displaying notices and communicating to our users. </p>
+
+<p>We are human, and have personality. Shouldn't our applications reflect this? Be predictable where it counts. But toss in some spice here and there — it is always a good thing. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sometimes maintained by <a href="https://github.com/sudara">sudara</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
