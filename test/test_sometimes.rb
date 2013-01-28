@@ -1,11 +1,12 @@
 require 'test/unit'
 require 'sometimes'
+require 'helper'
 
 class SometimesTest < Test::Unit::TestCase
   def test_ranges
     i = 0
     (25..50).times { i += 1 }
-    assert i > 24 
+    assert i > 24
     assert i < 51
   end
 
@@ -29,7 +30,7 @@ class SometimesTest < Test::Unit::TestCase
     end
     assert i < 8000
   end
-  
+
   def test_99
     i = 0
     100000.times do
@@ -39,7 +40,7 @@ class SometimesTest < Test::Unit::TestCase
     end
     assert i > 97000
   end
-  
+
   def test_1
     i = 0
     100000.times do
@@ -47,7 +48,7 @@ class SometimesTest < Test::Unit::TestCase
         i += 1
       end
     end
-    assert i < 1000   
+    assert i < 1000
   end
-  
+
 end
