@@ -10,50 +10,63 @@ Works with only ruby 1.9.2 and up for now because I'm lazy and like the Random c
 
 Add this line to your Gemfile:
 
-    gem 'sometimes'
+```ruby
+gem 'sometimes'
+```
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 Require when needed
 
-    require 'sometimes'
+```ruby
+require 'sometimes'
+```
 
 ## Usage
 
 Say something every other time
 
-    sometimes do
-      puts "Hey, you are awesome. You really are."  # executes warm fuzzies 50% of the time
-    end
+```ruby
+sometimes do
+  puts "Hey, you are awesome. You really are."  # executes warm fuzzies 50% of the time
+end
+```
 
 Maybe you want to do something several times, but not always the exact same number of times
 
-    (4..10).times do
-      pick_nose  # between 4 and 10 boogers made, it's unpredictable!
-    end
-    
+```ruby
+(4..10).times do
+  pick_nose  # between 4 and 10 boogers made, it's unpredictable!
+end
+``` 
 
 Maybe you want to remind someone of something, but not toooo often (It gets annoying!)
 
-    15.percent_of_the_time do
-      puts "Howdy, Don't forget to register!"  # be annoying, but only 15% of the time
-    end
-    
-    33.percent_of_the time do
-      be_very_polite  
-    end
+```ruby
+15.percent_of_the_time do
+  puts "Howdy, Don't forget to register!"  # be annoying, but only 15% of the time
+end
+
+33.percent_of_the time do
+  be_very_polite  
+end
+```
 
 Share a rare moment with your user
 
-    rarely do
-      puts "How would you like some spammy spam spam!"  # be really annoying about 5% of the time
-    end
-    
-    1.percent_of_the_time do
-      puts "Want to see something really cool?"
-    end
+```ruby
+rarely do
+  puts "How would you like some spammy spam spam!"  # be really annoying about 5% of the time
+end
+
+1.percent_of_the_time do
+  puts "Want to see something really cool?"
+end
+```
 
 ## Why?
 
