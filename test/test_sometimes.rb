@@ -48,7 +48,7 @@ class SometimesTest < Test::Unit::TestCase
         i += 1
       end
     end
-    assert i < 1000
+    assert i < 1100
   end
 
 end
