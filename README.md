@@ -68,6 +68,21 @@ end
 end
 ```
 
+If you can't say something nice, don't say anything at all:
+
+```ruby
+never do
+  puts "You're a terrible person"
+end
+```
+
+Always remember your manners:
+
+```ruby
+always do
+  puts "Thanks for sharing!"
+end
+```
 ## Why?
 
 This gem was made so [alonetone](http://github.com/sudara/alonetone) could bit more fun when displaying notices and communicating to our users. 
