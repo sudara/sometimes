@@ -31,6 +31,16 @@ class SometimesTest < Test::Unit::TestCase
     assert i < 8000
   end
 
+  def test_mostly
+    i = 0
+    100000.times do
+      mostly do
+        i += 1
+      end
+    end
+    assert i > 90000
+  end
+
   def test_99
     i = 0
     100000.times do

@@ -1,10 +1,10 @@
 require "sometimes/version"
 
 # -*- encoding : utf-8 -*-
-# OH SO FUN HELPERS!  
+# OH SO FUN HELPERS!
 
 # RANDOMLY EXECUTES A BLOCK X percent OF THE TIME
-# 
+#
 # TEST WITH
 #
 # i = 0
@@ -38,9 +38,12 @@ class Object
     50.percent_of_the_time {yield}
   end
   alias :sometimes :half_the_time
-  
+
   def rarely(&block)
     5.percent_of_the_time {yield}
   end
-end
 
+  def mostly(&block)
+    95.percent_of_the_time {yield}
+  end
+end
