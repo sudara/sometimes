@@ -46,4 +46,11 @@ class Object
   def mostly(&block)
     95.percent_of_the_time {yield}
   end
+
+  def never(&block)
+  end
+
+  def always(&block)
+    yield
+  end
 end
