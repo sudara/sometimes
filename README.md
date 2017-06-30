@@ -1,12 +1,19 @@
 # Sometimes
 
+[![Build Status](https://travis-ci.org/rubytune/sometimes.svg?branch=master)](https://travis-ci.org/rubytune/sometimes)
+
+
 Stop being so black and white. Mix things up a bit and execute code *sometimes*.
 
 A (very) simple collection of lil' helpers polluting namespaces because...why the hell not?
 
-## Installation
+## Versions
 
-Works with only ruby 1.9.2 and up for now because I'm lazy and like the Random class.
+Works with ruby 2.2 and up as of version 0.0.3.
+
+Use version 0.0.2 if you want to support earlier rubies.
+
+## Installation
 
 Add this line to your Gemfile:
 
@@ -42,7 +49,7 @@ Maybe you want to do something several times, but not always the exact same numb
 (4..10).times do
   pick_nose  # between 4 and 10 boogers made, it's unpredictable!
 end
-``` 
+```
 
 Maybe you want to remind someone of something, but not toooo often (It gets annoying!)
 
@@ -51,6 +58,7 @@ Maybe you want to remind someone of something, but not toooo often (It gets anno
   puts "Howdy, Don't forget to register!"  # be annoying, but only 15% of the time
 end
 
+```ruby
 33.percent_of_the_time do
   be_very_polite
 end
@@ -85,6 +93,15 @@ end
 ```
 ## Why?
 
-This gem was made so [alonetone](http://github.com/sudara/alonetone) could bit more fun when displaying notices and communicating to our users. 
+This gem was made so [alonetone](http://github.com/sudara/alonetone) could bit more fun when displaying notices and communicating to our users.
 
-We are human, and have personality. Shouldn't our applications reflect this? Be predictable where it counts. But toss in some spice here and there — it is always a good thing. 
+We are human, and have personality. Shouldn't our applications reflect this? Be predictable where it counts. But toss in some spice here and there — it is always a good thing.
+
+## Updating and Releasing this gem
+
+* Update lib/sometimes/version.rb
+
+```
+bundle && bundle exec rake gemspec
+bundle exec rake release
+```
