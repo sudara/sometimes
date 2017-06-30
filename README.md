@@ -58,7 +58,6 @@ Maybe you want to remind someone of something, but not toooo often (It gets anno
   puts "Howdy, Don't forget to register!"  # be annoying, but only 15% of the time
 end
 
-```ruby
 33.percent_of_the_time do
   be_very_polite
 end
