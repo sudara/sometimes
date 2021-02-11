@@ -58,3 +58,33 @@ class Object
     yield
   end
 end
+
+
+# Inspired by
+# https://spin.atomicobject.com/2012/11/13/convenient-trick-for-tolerance-based-test-assertions-using-ish/
+# Except the default is to have a implicit 1% relative tolerance
+# Unless an absolute delta is passed in
+
+class Numeric
+  def ish(**kwargs)
+    @approximateNumeric =
+    Sometimes::ApproximateNumeric.new self, kwargs
+  end
+end
+
+module Sometimes
+  class ApproximateNumeric < Numeric
+    def initialize(numeric, within: false, within_relative: 0.01)
+      @numeric = numeric
+      @delta = within || numeric * within_relative
+    end
+
+    def ==(other)
+      (other - @numeric).abs <= @delta
+    end
+
+    def to_s
+      "within #{@delta} of #{@numeric}"
+    end
+  end
+end

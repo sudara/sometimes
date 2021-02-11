@@ -97,4 +97,21 @@ class SometimesTest < Test::Unit::TestCase
     end
     assert_equal true, bool
   end
+
+  def test_ish_relative_default_within_1_percent
+    # default is within 1%
+    assert_equal 100.ish, 99
+    assert_equal 100.ish, 100
+    assert_equal 100.ish, 101
+
+    # 1% scales up
+    assert_equal 100.999.ish, 100.000
+    assert_equal 100.000.ish, 100.000
+    assert_equal  99.900.ish, 100.000
+  end
+
+  def test_ish_absolute_delta
+    assert_equal 100.ish(within: 10), 90
+    assert_equal 100.ish(within: 10), 110
+  end
 end
