@@ -21,8 +21,11 @@ class Integer
   def percent_of_the_time(&block)
     return if self == 0
 
-    raise(ArgumentError, 'Fixnum should be between 0 and 100 to be used with the percent_of_the_time method') unless self > 0 && self <= 100
-    yield if (Kernel.rand(99)+1) <= self
+    if self < 0 || self > 100
+      raise(ArgumentError, 'Integer should be between 0 and 100 to be used with the percent_of_the_time method')
+    else
+      yield block if Kernel.rand(1..100) <= self
+    end
   end
 end
 
@@ -37,22 +40,21 @@ end
 # sometimes do
 class Object
   def half_the_time(&block)
-    50.percent_of_the_time {yield}
+    50.percent_of_the_time(&block)
   end
-  alias :sometimes :half_the_time
+  alias sometimes half_the_time
 
   def rarely(&block)
-    5.percent_of_the_time {yield}
+    5.percent_of_the_time(&block)
   end
 
   def mostly(&block)
-    95.percent_of_the_time {yield}
+    95.percent_of_the_time(&block)
   end
 
-  def never(&block)
-  end
+  def never(&block); end
 
-  def always(&block)
+  def always
     yield
   end
 end

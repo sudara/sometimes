@@ -39,7 +39,7 @@ ________________________ _   _ _   _ _   _ _   _ _   _ _   _ _   _
 JUST KIDDING!!!
 DOC
 
-sometimes do
+rarely do
   puts ""
   puts "Run options:"
   puts ""

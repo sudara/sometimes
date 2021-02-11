@@ -3,6 +3,17 @@ require 'sometimes'
 require 'helper'
 
 class SometimesTest < Test::Unit::TestCase
+  def test_sometimes
+    i = 0
+    100000.times do
+      sometimes do
+        i += 1
+      end
+    end
+    puts i
+    assert (i < 51000) && (i > 49000)
+  end
+
   def test_ranges
     i = 0
     (25..50).times { i += 1 }
