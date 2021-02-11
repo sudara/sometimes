@@ -61,6 +61,16 @@ class SometimesTest < Test::Unit::TestCase
     assert i < 1100
   end
 
+  def test_0
+    bool = true
+    100000.times do
+      0.percent_of_the_time do
+        bool = false
+      end
+    end
+    assert_equal true, bool
+  end
+
   def test_never
     bool = true
     never do
