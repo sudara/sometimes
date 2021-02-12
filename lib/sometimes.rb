@@ -1,6 +1,5 @@
 require "sometimes/version"
 
-# -*- encoding : utf-8 -*-
 # OH SO FUN HELPERS!
 
 # RANDOMLY EXECUTES A BLOCK X percent OF THE TIME
@@ -17,14 +16,45 @@ require "sometimes/version"
 #
 #
 # 40.percent_of_the_time do
+#   some_task
+# end
+#
+# 40.percent_of_the_time(true, otherwise: false)
+#
+# 40.percent_of_the_time ? something : something_else
 class Integer
-  def percent_of_the_time(&block)
+  def percent_of_the_time(*arg, otherwise: nil)
     return if self == 0
 
-    if self < 0 || self > 100
-      raise(ArgumentError, 'Integer should be between 0 and 100 to be used with the percent_of_the_time method')
+    raise(ArgumentError, 'Integer should be between 0 and 100 to be used
+      with the percent_of_the_time method') if self < 0 || self > 100
+
+    if Kernel.rand(1..100) <= self
+      if block_given?
+        yield
+      elsif arg.empty?
+        true
+      else
+        arg.first
+      end
     else
-      yield block if Kernel.rand(1..100) <= self
+      format_otherwise(arg, otherwise)
+    end
+  end
+
+  protected
+
+  def format_otherwise(arg, otherwise)
+    return false if arg.empty?
+
+    if arg.first.is_a? Integer
+      otherwise.to_i
+    elsif arg.first.is_a? Float
+      otherwise.to_f
+    elsif arg.first.respond_to? :to_str
+      otherwise.to_s
+    else
+      otherwise
     end
   end
 end
@@ -39,20 +69,20 @@ end
 # half_the_time do
 # sometimes do
 class Object
-  def half_the_time(&block)
-    50.percent_of_the_time(&block)
+  def half_the_time(...)
+    50.percent_of_the_time(...)
   end
   alias sometimes half_the_time
 
-  def rarely(&block)
-    5.percent_of_the_time(&block)
+  def rarely(...)
+    5.percent_of_the_time(...)
   end
 
-  def mostly(&block)
-    95.percent_of_the_time(&block)
+  def mostly(...)
+    95.percent_of_the_time(...)
   end
 
-  def never(&block); end
+  def never(...); end
 
   def always
     yield

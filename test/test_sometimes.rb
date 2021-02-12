@@ -1,16 +1,14 @@
 require 'test/unit'
 require 'sometimes'
-require 'helper'
 
 class SometimesTest < Test::Unit::TestCase
-  def test_sometimes
+  def test_sometimes_with_block
     i = 0
     100000.times do
       sometimes do
         i += 1
       end
     end
-    puts i
     assert (i < 51000) && (i > 49000)
   end
 
@@ -19,17 +17,6 @@ class SometimesTest < Test::Unit::TestCase
     (25..50).times { i += 1 }
     assert i > 24
     assert i < 51
-  end
-
-  def test_percent
-    i = 0
-    100000.times do
-      75.percent_of_the_time do
-        i += 1
-      end
-    end
-    assert i > 73000
-    assert i < 76000
   end
 
   def test_rarely
@@ -50,36 +37,6 @@ class SometimesTest < Test::Unit::TestCase
       end
     end
     assert i > 90000
-  end
-
-  def test_99
-    i = 0
-    100000.times do
-      99.percent_of_the_time do
-        i += 1
-      end
-    end
-    assert i > 97000
-  end
-
-  def test_1
-    i = 0
-    100000.times do
-      1.percent_of_the_time do
-        i += 1
-      end
-    end
-    assert i < 1100
-  end
-
-  def test_0
-    bool = true
-    100000.times do
-      0.percent_of_the_time do
-        bool = false
-      end
-    end
-    assert_equal true, bool
   end
 
   def test_never
