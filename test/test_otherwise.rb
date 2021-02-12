@@ -69,4 +69,15 @@ class OtherwiseTest < Test::Unit::TestCase
     end
     assert_in_delta(i, 50000, 500)
   end
+
+  class CustomObject; end
+
+  def test_otherwise_should_return_nil
+    options = []
+    10.times do
+      options << sometimes(CustomObject.new)
+    end
+    puts options.inspect
+    assert options.include? nil
+  end
 end
